@@ -1,6 +1,7 @@
 package practice;
 
 import util.MyLogger;
+import util.ThreadUtils;
 
 public class PracticeMainV2 {
 
@@ -14,11 +15,7 @@ public class PracticeMainV2 {
         public void run() {
             for (int i = 0; i < 5; i++) {
                 MyLogger.log("value : "+i);
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+                ThreadUtils.sleep(1000);
             }
         }
     }
